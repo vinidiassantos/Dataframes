@@ -26,3 +26,6 @@ delta_table.alias("target") \
 
 # Lendo o DataFrame resultante após o merge/upsert
 despachantes_atualizados_df = spark.read.format("delta").load(delta_path)
+
+# Exibindo o DataFrame resultante
+despachantes_atualizados_df.orderBy("id").show()
